@@ -1,95 +1,15 @@
+
 <template>
-  <div class="login-layout blur-login">
-    <div class="main-container">
-      <div class="main-content">
-        <div class="row">
-          <div class="col-sm-10 col-sm-offset-1">
-            <div class="login-container">
-              <div class="center">
-                <h1>
-                  <i class="ace-icon fa fa-leaf green"></i>
-                  <span class="red">Tool</span>
-                  <span class="white" id="id-text2">Hub</span>
-                </h1>
-                <h4 class="light-blue " id="id-company-text">&copy; ZeroClian</h4>
-              </div>
-
-              <div class="space-6"></div>
-
-              <div class="position-relative">
-                <div id="login-box" class="login-box visible widget-box no-border">
-                  <div class="widget-body">
-                    <div class="widget-main">
-                      <h4 class="header blue lighter bigger">
-                        <i class="ace-icon fa fa-coffee green"></i>
-                        Please Enter Your Information
-                      </h4>
-
-                      <div class="space-6"></div>
-
-                      <form>
-                        <fieldset>
-                          <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username"/>
-															<i class="ace-icon fa fa-user"></i>
-														</span>
-                          </label>
-
-                          <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password"/>
-															<i class="ace-icon fa fa-lock"></i>
-														</span>
-                          </label>
-
-                          <div class="space"></div>
-
-                          <div class="clearfix">
-                            <label class="inline">
-                              <input type="checkbox" class="ace"/>
-                              <span class="lbl"> Remember Me</span>
-                            </label>
-
-                            <button type="button" class="width-35 pull-right btn btn-sm btn-primary"
-                                    v-on:click="login()">
-                              <i class="ace-icon fa fa-key"></i>
-                              <span class="bigger-110">Login</span>
-                            </button>
-                          </div>
-
-                          <div class="space-4"></div>
-                        </fieldset>
-                      </form>
-
-                      <div class="space-6"></div>
-                    </div><!-- /.widget-main -->
-
-                    <div class="toolbar clearfix">
-                      <div>
-                        <a href="#" data-target="#forgot-box" class="forgot-password-link">
-                          <i class="ace-icon fa fa-arrow-left"></i>
-                          I forgot my password
-                        </a>
-                      </div>
-
-                      <div>
-                        <a href="#" data-target="#signup-box" class="user-signup-link">
-                          I want to register
-                          <i class="ace-icon fa fa-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div><!-- /.widget-body -->
-                </div><!-- /.login-box -->
-              </div><!-- /.position-relative -->
-            </div>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.main-content -->
-    </div><!-- /.main-container -->
-    <div class="login-layout blur-login">
+  <div class="login">
+    <h2>登陆注册</h2>
+    <div class="login_form">
+      <span>账号：</span>
+      <input type="text" placeholder="请输入账号">
+      <br>
+      <span>密码：</span>
+      <input type="password" placeholder="请输入密码">
     </div>
+      <button class="login_btn" onclick="login()">登 录</button>
   </div>
 </template>
 
@@ -104,6 +24,98 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(#a18cd1 0%, #fbc2eb 100%);
+  background-size: cover;
+  flex: 1;
+  align-items: center;
+}
 
+.login {
+  text-align: center;
+  margin: 0 auto;
+  width: 600px;
+  height: 520px;
+  background-color: rgba(87, 86, 86, 0.2);
+  border-radius: 25px;
+  box-shadow: 5px 2px 35px -7px #ff9a9e;
+}
+
+.login h2 {
+  padding: 20px;
+  margin-top: 40px;
+  color: rgb(255, 248, 240);
+  font-weight: 100;
+}
+
+
+    .login_form{
+        padding: 20px;
+    }
+    .login_form span{
+        color: rgb(131, 220, 255);
+        font-size: 18px;
+        font-weight: 100;
+    }
+    .login_form input{
+        background-color: transparent;
+        width: 320px;
+        padding: 2px;
+        text-indent: 2px;
+        color: white;
+        font-size: 20px;
+        height: 45px;
+        margin: 30px 30px 30px 5px;
+        outline: none;
+        border: 0;
+        border-bottom: 1px solid rgb(131, 220, 255);
+    }
+
+input::placeholder {
+  color: #fbc2eb;
+  font-weight: 100;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.login_btn {
+  background-color: rgba(255, 255, 255, 0.582);
+  border: 1px solid rgb(190, 225, 255);
+  padding: 10px;
+  width: 240px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 30px;
+  color: rgb(100, 183, 255);
+  font-weight: 100;
+  margin-top: 15px;
+}
+
+.login_btn:hover {
+  box-shadow: 2px 2px 15px 2px rgb(190, 225, 255);
+  background-color: transparent;
+  color: white;
+  /* 选择动画 */
+  animation: login_mation 0.5s;
+}
+
+/* 定义动画 */
+@keyframes login_mation {
+  from {
+    background-color: rgba(255, 255, 255, 0.582);
+    box-shadow: 0px 0px 15px 2px rgb(190, 225, 255);
+  }
+
+  to {
+    background-color: transparent;
+    color: white;
+    box-shadow: 2px 2px 15px 2px rgb(190, 225, 255);
+  }
+}
 </style>
