@@ -23,4 +23,3 @@ Vue.http.interceptors.push((request,next)=>{
   });
  })
 
-console.log("环境:", process.env.NODE_ENV);

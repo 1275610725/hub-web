@@ -124,7 +124,6 @@ export default {
     list(){
       let _this = this
       _this.$ajax.get(process.env.VUE_APP_SERVER + "/service/stock/list").then((respond) => {
-        console.log(respond)
         _this.stocks = respond.data
       })
     }

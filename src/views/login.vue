@@ -22,8 +22,6 @@ export default {
       axios({
         url: "http://192.168.2.103:8080/api/login",
         method: "get"
-      }).then(res => {
-        console.log(res.data); 
       })
     }
   }

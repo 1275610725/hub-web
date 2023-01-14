@@ -11,5 +11,7 @@ module.exports = defineConfig({
           }
       }
   }
-  }
+  },
+  // 相对路径都是相对于index.js所在的目录config开始的
+
 })
