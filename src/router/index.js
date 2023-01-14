@@ -5,12 +5,20 @@ import Admin from '@/views/admin'
 import Index from '@/views/admin/index'
 import Fund from '@/views/admin/fund'
 import Stock from '@/views/admin/stock'
+// import axios from 'axios'
 
 Vue.use(Router);
+// let config = {
+//     baseURL: "http://localhost:8080",
+//     timeout:10000,
+//     withCredentials: true
+// }
+
+// const instance = axios.create(config)
 
 export default new Router({
     mode: 'history',
-    base: process.env.BASE_URL,
+    baseURL: "http://localhost:8080",
     routes: [{
         path: '*',
         redirect: '/login',

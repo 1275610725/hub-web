@@ -9,16 +9,22 @@
       <span>密码：</span>
       <input type="password" placeholder="请输入密码">
     </div>
-      <button class="login_btn" onclick="login()">登 录</button>
+    <button class="login_btn" @click="login()">登 录</button>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "Login",
   methods: {
     login() {
-      this.$router.push('/index')
+      axios({
+        url: "http://192.168.2.103:8080/api/login",
+        method: "get"
+      }).then(res => {
+        console.log(res.data); 
+      })
     }
   }
 }
@@ -55,27 +61,29 @@ body {
 }
 
 
-    .login_form{
-        padding: 20px;
-    }
-    .login_form span{
-        color: rgb(131, 220, 255);
-        font-size: 18px;
-        font-weight: 100;
-    }
-    .login_form input{
-        background-color: transparent;
-        width: 320px;
-        padding: 2px;
-        text-indent: 2px;
-        color: white;
-        font-size: 20px;
-        height: 45px;
-        margin: 30px 30px 30px 5px;
-        outline: none;
-        border: 0;
-        border-bottom: 1px solid rgb(131, 220, 255);
-    }
+.login_form {
+  padding: 20px;
+}
+
+.login_form span {
+  color: rgb(131, 220, 255);
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.login_form input {
+  background-color: transparent;
+  width: 320px;
+  padding: 2px;
+  text-indent: 2px;
+  color: white;
+  font-size: 20px;
+  height: 45px;
+  margin: 30px 30px 30px 5px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid rgb(131, 220, 255);
+}
 
 input::placeholder {
   color: #fbc2eb;
