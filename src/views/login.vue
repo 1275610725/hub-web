@@ -4,10 +4,10 @@
     <h2>登陆注册</h2>
     <div class="login_form">
       <span>账号：</span>
-      <input type="text" placeholder="请输入账号">
+      <input type="text" name="account" v-model="account" placeholder="请输入账号">
       <br>
       <span>密码：</span>
-      <input type="password" placeholder="请输入密码">
+      <input type="password" name="password" v-model="password" placeholder="请输入密码">
     </div>
     <button class="login_btn" @click="login()">登 录</button>
   </div>
@@ -20,8 +20,12 @@ export default {
   methods: {
     login() {
       axios({
-        url: "http://192.168.2.103:8080/api/login",
-        method: "get"
+        url: "http://localhost:9090/api/login",
+        method: "post",
+        data: {
+          username: this.account,
+          password: this.password
+        }
       })
     }
   }

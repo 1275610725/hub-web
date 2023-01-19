@@ -10,6 +10,7 @@ Vue.prototype.$ajax = axios
 new Vue({
   router,
   render: h => h(App),
+  //挂载函数
 }).$mount('#app')
 
 Vue.http.interceptors.push((request,next)=>{

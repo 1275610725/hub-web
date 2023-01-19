@@ -1,0 +1,13 @@
+node_modules项目的依赖中心
+public：静态资源文件夹，和assets不同的是public不会被webpack进行打包，使用路径的时候要使用绝对路径
+src：项目的核心区域，所有的开发文件的核心内容区域，包括组件，静态资源等等
+asstet：静态资源文件夹，和public不同的是assets文件夹会被webpack打包，所以要使用相对路径
+components：Vue功能组件的存放位置，内部存放的是公用的组件
+views：公共文件，主要以各个独立页面为主
+APP.vue：整个vue的根组件，所有的vue组件都是从这个组件中拓展的，App根组件最后通过编译后将内容渲染到.html文件中
+main.js：vue的入口文件，vue文件初始化位置
+.gitignore：GitHub相关配置文件，作用是git再提交代码的时候指定相关忽略格式文件
+babel.config.js：babel的配置文件
+package.json：配置（记录了）项目的相关模块，项目相关配置信息等等
+package-lock.json：作用是记录的当前项目安装的相关依赖版本，并且记住了当前所有依赖的关联关系，如果下次vue进行编译的时候会按照这个文件进行编译
+README.md：文件的作用是项目相关的使用方法，和使用说明
