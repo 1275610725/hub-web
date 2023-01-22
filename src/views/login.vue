@@ -7,24 +7,32 @@
       <input type="text" name="account" v-model="account" placeholder="请输入账号">
       <br>
       <span>密码：</span>
-      <input type="password" name="password" v-model="password" placeholder="请输入密码">
+      <input type="password" name="password" v-model="password" @keyup.enter="login()" placeholder="请输入密码">
     </div>
     <button class="login_btn" @click="login()">登 录</button>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import { postAction } from '@/api/manage'
 export default {
   name: "Login",
   methods: {
+
     login() {
-      axios({
-        url: "http://localhost:9090/api/login",
-        method: "post",
-        data: {
-          username: this.account,
-          password: this.password
+      var vm = this
+      var data = {
+        username: this.account,
+        password: this.password
+      }
+      postAction('/api/login', data).then(function (res) {
+        if (res.status == 200) {
+          console.log("后台返回登录token:"+res.data.token)
+          localStorage.setItem('token', res.data.token)
+          vm.$router.push({ name: "hub" });
+          console.log("页面跳转")
+        } else {
+          console.log('3333')
         }
       })
     }

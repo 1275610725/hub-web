@@ -1,59 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/login'
-import Admin from '@/views/admin'
-import Index from '@/views/admin/index'
-import Fund from '@/views/admin/fund'
-import Stock from '@/views/admin/stock'
-// import axios from 'axios'
+import Hub from '@/views/hub'
 
 Vue.use(Router);
-// let config = {
-//     baseURL: "http://localhost:8080",
-//     timeout:10000,
-//     withCredentials: true
-// }
-
-// const instance = axios.create(config)
 
 export default new Router({
     mode: 'history',
-    baseURL: "http://localhost:8080",
+    baseURL: "/api",
     routes: [{
-        path: '*',
-        redirect: '/login',
-    }, {
         path: '/login',
+        name: 'login',
         component: Login
-    }, {
-        path: '/',
-        name: 'admin',
-        component: Admin,
-        children: [{
-            path: 'index',
-            name: 'index',
-            component: Index
-        },
-            {
-                path: 'finance/fund',
-                name: 'finance/fund',
-                component: Fund
-            },
-            {
-                path: 'finance/stock',
-                name: 'finance/stock',
-                component: Stock
-            },
-            {
-                path: 'sys/user',
-                name: 'sys/user',
-                component: Fund,
-            },
-            {
-                path: 'sys/setting',
-                name: 'sys/setting',
-                component: Stock,
-            }
-        ]
+    },
+    {
+        path: '/hub',
+        name: 'hub',
+        component: Hub,
+        // meta:{
+		// 	requireAuth:true //此时表示进入这个路由是需要登录的
+		// }
     }]
 })
