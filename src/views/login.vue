@@ -21,18 +21,23 @@ export default {
 
     login() {
       var vm = this
+
       var data = {
         username: this.account,
         password: this.password
       }
       postAction('/api/login', data).then(function (res) {
         if (res.status == 200) {
-          console.log("后台返回登录token:"+res.data.token)
-          localStorage.setItem('token', res.data.token)
-          vm.$router.push({ name: "hub" });
-          console.log("页面跳转")
+          if (res.data.code != '00000') {
+            vm.$toast(res.data.msg, "fail")
+          } else {           
+            console.log("token:" + res.data.data.token)
+            localStorage.setItem('token', res.data.data.token)
+            vm.$toast('登录成功', "success")
+            vm.$router.push({ name: "hub" })
+          }
         } else {
-          console.log('3333')
+          vm.$toast("操作失败!")
         }
       })
     }

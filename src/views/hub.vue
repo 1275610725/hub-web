@@ -1,7 +1,9 @@
-
 <template>
-    <div class="Hub">
-      <h2>主页</h2>
-    </div>
+    <div class="no-skin">
+       <p>主页</p>
+      </div><!-- /.main-container -->
   </template>
-
+  
+ 
+  
+  

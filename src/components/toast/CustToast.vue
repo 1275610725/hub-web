@@ -86,10 +86,10 @@
     }
 
     .icon img {
-        width: 20px;
-        height: 20px;
-        margin-top: 3px;
-        margin-right: 4px;
+        width: 60px;
+        height: 80px;
+        margin-top: 6px;
+        margin-right: 8px;
     }
 
 </style>
