@@ -31,7 +31,6 @@ export default {
           if (res.data.code != '00000') {
             vm.$toast(res.data.msg, "fail")
           } else {           
-            console.log("token:" + res.data.data.token)
             localStorage.setItem('token', res.data.data.token)
             vm.$toast('登录成功', "success")
             vm.$router.push({ name: "hub" })

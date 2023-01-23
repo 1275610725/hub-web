@@ -9,18 +9,14 @@ router.beforeEach((to, from, next) => {
     // 验证token存在，则进入该页面
     console.log('token:' + token)
     if (token != 'undefined') {
-        console.log('token不为空')
         next();
     } else { //否则进入不需要验证token界面,（这里进入的是登录页面）
-        console.log('token为空1')
         // console.log(to.path)
         // console.log(whiteList.indexOf(to.path))
         // console.log('token不为空2')
         if (to.path === "/login" || whiteList.indexOf(to.path) !== -1) {
-            console.log('进入1')
             next();
         }else{
-            console.log('进入2')
             next('/login')
         } 
     }
