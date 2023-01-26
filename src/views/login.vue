@@ -1,5 +1,6 @@
 
 <template>
+  <div class="loginBackground">
   <div class="login">
     <h2>登陆注册</h2>
     <div class="login_form">
@@ -11,6 +12,7 @@
     </div>
     <button class="login_btn" @click="login()">登 录</button>
   </div>
+</div>
 </template>
 
 <script>
@@ -44,8 +46,8 @@ export default {
 }
 </script>
 
-<style>
-body {
+<style lang="less" scoped>
+.loginBackground {
   padding: 0;
   margin: 0;
   height: 100vh;
