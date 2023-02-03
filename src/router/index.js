@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/login'
 import Hub from '@/views/hub'
-
+import Admin from '@/views/admin'
 Vue.use(Router);
 
 export default new Router({
@@ -22,6 +22,14 @@ export default new Router({
         // 	requireAuth:true //此时表示进入这个路由是需要登录的
         // }
     }, // 默认重定向
+    {
+        path: '/admin',
+        name: 'admin',
+        component: Admin,
+        // meta:{
+        // 	requireAuth:true //此时表示进入这个路由是需要登录的
+        // }
+    }, 
     {
         path: '/',
         redirect: '/hub',

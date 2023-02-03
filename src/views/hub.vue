@@ -27,12 +27,12 @@
 
         <el-container style="height: 900px; border: 0px solid #eee">
             <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-                <el-menu :default-openeds="['1', '3']">
+                <el-menu :default-openeds="['1', '3']" router>
                     <el-submenu index="1">
                         <template slot="title"><i class="el-icon-message"></i>三年级</template>
                         <el-menu-item-group>
                             <template slot="title">上册</template>
-                            <el-menu-item index="1-1">数学</el-menu-item>
+                            <el-menu-item index="/admin">数学</el-menu-item>
                             <el-menu-item index="1-2">语文</el-menu-item>
                             <el-menu-item index="1-3">英语</el-menu-item>
                         </el-menu-item-group>
